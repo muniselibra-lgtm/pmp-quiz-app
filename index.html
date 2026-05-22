@@ -268,61 +268,451 @@
 
     <script>
         const questions = [
-            {
-                question: "A project manager is managing a software deployment project using an agile approach. During a iteration review, the product owner requests a new feature that was not part of the initial release plan. What should the project manager do next?",
-                options: [
-                    "Refuse the request because it introduces scope creep outside the sprint goal.",
-                    "Ask the product owner to add the requirement to the product backlog for prioritization.",
-                    "Direct the development team to stop their current tasks and evaluate the new requirement immediately.",
-                    "Submit a formal change request to the Change Control Board (CCB) for approval."
-                ],
-                correct: 1,
-                explanation: "In agile methodologies, new requirements are welcomed but must be routed through the product backlog. The Product Owner is responsible for maintaining the backlog and prioritizing features based on business value. A Change Control Board (CCB) is a predictive/waterfall mechanism and does not apply to standard sprint refinement actions."
-            },
-            {
-                question: "During a hybrid project's execution phase, a key stakeholder complains that they are receiving too many highly technical updates that are not relevant to their department. The project manager reviews the project documentation. Which document should be modified to resolve this issue?",
-                options: [
-                    "Stakeholder Engagement Plan",
-                    "Communications Management Plan",
-                    "Resource Management Plan",
-                    "Project Charter"
-                ],
-                correct: 1,
-                explanation: "The Communications Management Plan outlines how, when, and in what format project information will be distributed to various stakeholders. Since the stakeholder is receiving an incorrect volume or depth of communication, this plan needs to be updated to better align with their specific informational needs."
-            },
-            {
-                question: "A critical project activity is running behind schedule due to unexpected resource constraints. The project manager realizes that delaying this activity will delay the entire project completion date. Which technique should the project manager use to get the project back on track without changing the project scope?",
-                options: [
-                    "Scope reduction",
-                    "Fast-tracking",
-                    "Crashing",
-                    "Resource leveling"
-                ],
-                correct: 2,
-                explanation: "Crashing is a schedule compression technique used to shorten the schedule duration for the least incremental cost by adding resources (e.g., overtime or additional staff). Fast-tracking involves performing phases or activities in parallel that are normally done in sequence, but it increases risk. Resource leveling often extends the schedule, and scope reduction changes the scope, which contradicts the question constraints."
-            },
-            {
-                question: "A project manager is appointed to a global project with team members located across four different time zones. During initial team syncs, misunderstandings frequently occur due to cultural nuances and varying communication styles. What should the project manager establish to address this challenge?",
-                options: [
-                    "A strict disciplinary policy for communication errors",
-                    "A revised Responsibility Assignment Matrix (RAM)",
-                    "Team Charter guidelines outlining communication norms",
-                    "Daily 24-hour mandatory overlap standup meetings"
-                ],
-                correct: 2,
-                explanation: "A Team Charter is a document that records the team values, agreements, and operating guidelines. Establishing communication norms, ground rules, and expectations within a collaborative team charter early on helps cross-cultural and virtual teams align and reduces friction."
-            },
-            {
-                question: "Near the end of a construction project, the project manager notices that a subcontractor has completed their assigned deliverables, but some minor documentation clean-up is missing. The project sponsor wants to immediately reassign the project manager to a new corporate initiative. What should the project manager do?",
-                options: [
-                    "Hand over the incomplete files to the operational unit and accept the new assignment.",
-                    "Ensure administrative closure steps are fully executed and all project files are indexed before leaving.",
-                    "Inform the sponsor that they cannot accept the new assignment under any circumstances.",
-                    "Let the subcontractor finalize the documentation directly with the client without project manager oversight."
-                ],
-                correct: 1,
-                explanation: "Project closing involves administrative closure actions like archiving project information, completing historical data, and ensuring all documentation is finalized. Even if pressed for time or reassigned by a sponsor, the project manager is fundamentally responsible for professional, structured project closure."
-            }
+// --- FIRST SET: QUESTIONS 1-10 ---
+  {
+    question: "A project manager is leading a hybrid project to implement a new customer relationship management system. The technical team is using agile delivery for configuration and testing, while procurement and compliance activities follow a predictive approach. During a steering committee meeting, a senior stakeholder complains that the team is “moving too fast without enough documentation,” while the product owner says the current governance process is slowing delivery. What should the project manager do next?",
+    options: [
+      "Stop the agile work until all documentation is completed and approved",
+      "Tailor the governance approach to align documentation needs with delivery cadence and stakeholder expectations",
+      "Ask the sponsor to choose either agile or predictive so the team can follow one method consistently",
+      "Continue with the current approach because hybrid projects always create temporary confusion"
+    ],
+    answer: "Tailor the governance approach to align documentation needs with delivery cadence and stakeholder expectations",
+    explanation: "A hybrid project requires the project manager to tailor the approach so that governance, documentation, and delivery practices match the project context. The concern here is not that agile or predictive is wrong; it is that stakeholder needs and governance expectations are not yet properly integrated. The best next step is to align documentation expectations, compliance needs, and delivery cadence in a way that preserves value delivery while satisfying oversight requirements."
+  },
+  {
+    question: "A project manager notices growing tension between two senior team members. One leads infrastructure work and the other leads application development. Their disagreement over environment readiness is beginning to delay integration testing, and other team members are taking sides. What should the project manager do first?",
+    options: [
+      "Escalate the issue to the functional managers because senior specialists are involved",
+      "Reassign one of the team members to reduce conflict on the project",
+      "Facilitate a discussion to identify the root cause and align both leads on project objectives",
+      "Document the conflict in the issue log and monitor the situation for another week"
+    ],
+    answer: "Facilitate a discussion to identify the root cause and align both leads on project objectives",
+    explanation: "This is primarily a People domain question focused on conflict management and team leadership. The project manager should address conflict early and directly by facilitating a productive discussion, identifying root causes, and helping both leads refocus on shared project objectives. PMP exam logic generally favors resolving conflict at the lowest appropriate level before escalating."
+  },
+  {
+    question: "A predictive project is in execution. A key stakeholder asks for a new reporting feature that would provide significant operational value. The stakeholder insists it is a small change and wants the team to begin immediately. The project manager reviews the request and sees that the feature may affect scope, schedule, and testing. What should the project manager do next?",
+    options: [
+      "Direct the team to implement the feature because it offers business value",
+      "Submit the request through integrated change control and assess impacts before approval",
+      "Reject the request because scope has already been baselined",
+      "Add the feature to lessons learned for consideration in future projects"
+    ],
+    answer: "Submit the request through integrated change control and assess impacts before approval",
+    explanation: "In a predictive environment with baselined scope, a requested enhancement that may affect scope, schedule, and testing should go through integrated change control. The project manager must assess impacts before implementation and ensure proper review and authorization. This protects project governance while still allowing beneficial changes to be considered."
+  },
+  {
+    question: "An agile team has completed three iterations of a product development effort. Velocity is declining, team morale is dropping, and several stories are being carried over from one iteration to the next. During the retrospective, team members say priorities keep changing in the middle of the sprint. What should the project manager or scrum master recommend?",
+    options: [
+      "Increase the sprint length so the team has more time to complete stories",
+      "Freeze all changes to the backlog until the release is complete",
+      "Work with the product owner to protect the sprint backlog from mid-sprint changes",
+      "Replace underperforming team members to restore velocity quickly"
+    ],
+    answer: "Work with the product owner to protect the sprint backlog from mid-sprint changes",
+    explanation: "In agile, once a sprint begins, the sprint backlog should be protected from unnecessary mid-sprint changes. If priorities are constantly changing during the sprint, the team cannot reliably complete committed work, velocity declines, and morale suffers. The project manager or scrum master should work with the product owner to preserve sprint focus and manage changing priorities through the product backlog."
+  },
+  {
+    question: "A project manager is assigned to a global project with team members across four countries. Although all milestones are being met, misunderstandings are frequent during handoffs, and one region says decisions are being made without enough local input. What is the best action for the project manager?",
+    options: [
+      "Standardize communication only through email so all instructions are documented",
+      "Create or update the communications management approach to reflect time zones, language needs, and decision pathways",
+      "Ask regional leads to solve communication issues locally without changing the overall project approach",
+      "Reduce meeting frequency to avoid confusion caused by too many discussions"
+    ],
+    answer: "Create or update the communications management approach to reflect time zones, language needs, and decision pathways",
+    explanation: "On a global project, communication needs should be intentionally tailored to address time zones, cultural expectations, language differences, and decision rights. Updating the communications management approach is the strongest response because it creates a structured, scalable solution rather than relying on ad hoc fixes."
+  },
+  {
+    question: "A project manager is working on a government-regulated construction project. Midway through execution, a new environmental regulation is enacted. Compliance will require design modifications and could affect both schedule and cost baselines. What should the project manager do first?",
+    options: [
+      "Update the schedule baseline immediately to reflect the likely delay",
+      "Ignore the regulation until the client formally requests compliance",
+      "Assess the impact of the regulatory change and engage the appropriate change and compliance processes",
+      "Ask the team to work overtime to absorb the compliance effort without changing baselines"
+    ],
+    answer: "Assess the impact of the regulatory change and engage the appropriate change and compliance processes",
+    explanation: "This question falls under Business Environment because an external regulatory change affects the project. The first step is to assess impact and trigger the proper compliance and change processes. The project manager must understand the effect on scope, design, schedule, cost, and stakeholder obligations before updating baselines or taking corrective action."
+  },
+  {
+    question: "A newly formed agile team includes several experienced technical experts, but they are unfamiliar with agile ways of working. During sprint planning, the team waits for the project manager to assign tasks and estimate effort. This is slowing planning and reducing ownership. Which of the following represents the best combination of actions for the project manager to take? (Select the best multi-action option)",
+    options: [
+      "Continue assigning work until the team becomes more comfortable, and escalate the issue to the sponsor",
+      "Replace the planning meeting with individual manager-led assignments to save time",
+      "Coach the team on self-organization / collaborative estimation, and facilitate team agreements clarifying agile roles and norms",
+      "Escalate the team's lack of agility to the sponsor while continuing to assign tasks directly"
+    ],
+    answer: "Coach the team on self-organization / collaborative estimation, and facilitate team agreements clarifying agile roles and norms",
+    explanation: "This scenario addresses agile team development. A team new to agile often needs coaching to shift from manager-directed work to self-organization. The two best actions are to coach the team on self-organization and collaborative estimation, and to facilitate team agreements clarifying agile roles, responsibilities, and norms. These actions build capability and ownership rather than reinforcing dependency."
+  },
+  {
+    question: "A project manager is overseeing a product modernization initiative. Executive leadership wants benefits realized quickly, but the organization also requires formal phase-gate reviews for funding release. The team can deliver usable features incrementally. Which combination of approaches is most appropriate to meet both requirements? (Select the best multi-action option)",
+    options: [
+      "Delay all user-facing releases until the entire solution passes final governance review using a predictive approach",
+      "Use a hybrid life cycle that delivers incrementally while retaining phase-gate governance, and map increments to checkpoints",
+      "Eliminate governance reviews entirely to prioritize fast value delivery as requested by the executives",
+      "Use a purely predictive framework because executives requested business value quickly"
+    ],
+    answer: "Use a hybrid life cycle that delivers incrementally while retaining phase-gate governance, and map increments to checkpoints",
+    explanation: "A hybrid approach is most appropriate when the organization requires formal governance while the team can deliver value incrementally. Using a hybrid life cycle and mapping increments to governance checkpoints allows the project to satisfy funding controls and still realize benefits early. This reflects realistic PMP exam thinking: tailor the approach to business and governance needs."
+  },
+  {
+    question: "A sponsor tells the project manager that a major competitor has launched a similar product. The sponsor now wants to accelerate delivery of the highest-value features and defer lower-priority functionality. The project is currently planned using a predictive approach, and detailed plans exist for all scope. What should the project manager recommend?",
+    options: [
+      "Keep the original plan because changing direction mid-project will reduce control",
+      "Rebaseline the project immediately without further analysis",
+      "Review priorities with stakeholders and evaluate whether a hybrid or incremental delivery approach would better meet business needs",
+      "Add more resources to complete the full original scope faster"
+    ],
+    answer: "Review priorities with stakeholders and evaluate whether a hybrid or incremental delivery approach would better meet business needs",
+    explanation: "The sponsor’s request reflects a shift in market conditions and business priorities. The project manager should revisit scope priorities with stakeholders and evaluate whether a hybrid or incremental approach would better support faster delivery of high-value features. This is a strategic response that aligns the project with evolving business needs instead of rigidly following the original plan."
+  },
+  {
+    question: "Match each project manager action to its appropriate focus area: (1) Resolving team disagreement through discussion, (2) Reviewing scope change impact on schedule/cost, (3) Aligning project to a new regulatory requirement, (4) Establishing feedback loops for iterative delivery. Which mapping is correct?",
+    options: [
+      "1-People, 2-Process, 3-Business Environment, 4-Delivery Approach (A)",
+      "1-Process, 2-People, 3-Delivery Approach, 4-Business Environment (B)",
+      "1-People, 2-Business Environment, 3-Process, 4-Delivery Approach (C)",
+      "1-Delivery Approach, 2-Process, 3-Business Environment, 4-People (D)"
+    ],
+    answer: "1-People, 2-Process, 3-Business Environment, 4-Delivery Approach (A)",
+    explanation: "1-A: Resolving disagreement between key team members is a People focus. 2-B: Reviewing the impact of a requested scope change on schedule and cost is a Process focus. 3-C: Aligning the project to a new regulation is a Business Environment focus. 4-D: Establishing feedback loops and backlog refinement belongs to Delivery Approach, especially agile or iterative delivery."
+  },
+
+  // --- SECOND SET: QUESTIONS 11-20 (Questions 1-10 from Document Part 2) ---
+  {
+    question: "A high-performing agile team member suddenly starts missing daily standup meetings and delivering sub-par code, which is delaying the sprint goals. Other team members are expressing frustration about picking up the slack. What should the project manager do first?",
+    options: [
+      "Address the performance issue during the next sprint retrospective so the entire team can discuss it.",
+      "Meet privately with the team member to understand the root cause of the sudden change in performance.",
+      "Escalate the issue to the team member's functional manager to initiate a performance improvement plan.",
+      "Reassign the team member’s pending tasks to more reliable team members to protect the current sprint velocity."
+    ],
+    answer: "Meet privately with the team member to understand the root cause of the sudden change in performance.",
+    explanation: "A sudden drop in a high-performing team member's output indicates an underlying issue (personal, professional, or burnout). Servant leadership and agile principles dictate that the project manager (or Scrum Master) should first approach the individual privately to show empathy, understand the root cause, and offer support before escalating or involving the group."
+  },
+  {
+    question: "A multi-year hybrid project is entering its execution phase. The hardware component follows a predictive lifecycle with fixed milestones, while the software component uses an agile framework. During a steering committee review, a key stakeholder voices confusion about how progress is being tracked across the two distinct methodologies. What should the project manager do?",
+    options: [
+      "Standardize the reporting by requiring the software team to use Earned Value Management (EVM) milestones instead of burnup charts.",
+      "Ask the stakeholder to attend daily standups and sprint reviews to stay updated on the software development progress.",
+      "Establish an integrated dashboard that maps agile sprint velocities and release milestones against predictive project phases.",
+      "Request that the PMO take over stakeholder communication due to the complexity of the hybrid tracking mechanisms."
+    ],
+    answer: "Establish an integrated dashboard that maps agile sprint velocities and release milestones against predictive project phases.",
+    explanation: "In a hybrid environment, the project manager serves as the bridge between different delivery frameworks. Creating an integrated dashboard allows senior stakeholders to visualize how agile software increments feed into or depend on predictive hardware milestones without forcing either team to abandon their optimized working methods."
+  },
+  {
+    question: "During the execution of a critical pipeline construction project, a newly introduced environmental regulation threatens to halt work unless a specific, non-destructive testing method is utilized. Implementing this method will increase costs by 15%. What should the project manager do next?",
+    options: [
+      "Issue an immediate stop-work order to prevent compliance violations until a solution is approved.",
+      "Allocate funds from the management reserve to cover the increased cost of the testing method.",
+      "Submit a formal change request to modify the project management plan and baseline costs.",
+      "Direct the procurement team to find a cheaper contractor who can bypass the new regulation legally."
+    ],
+    answer: "Submit a formal change request to modify the project management plan and baseline costs.",
+    explanation: "External regulatory changes represent a shift in the business environment that directly impacts project constraints. In a predictive project, changes to the approved scope, cost, or methods must pass through the formal Change Control Board (CCB) via a structured change request."
+  },
+  {
+    question: "An agile team is experiencing intense conflict during iteration planning regarding which architecture pattern to adopt for a new cloud platform. The discussion is turning personal, and two senior developers are refusing to collaborate. What is the best way for the project manager to handle this situation?",
+    options: [
+      "Choose the architecture pattern themselves based on their own expert judgment to keep the project on schedule.",
+      "Implement the \"Withdraw/Avoid\" technique by postponing the architecture discussion until the next iteration.",
+      "Facilitate a collaborative workshop using objective criteria to evaluate both options and guide the team toward a shared decision.",
+      "Recommend that the two developers be separated and moved to different agile teams to preserve team harmony."
+    ],
+    answer: "Facilitate a collaborative workshop using objective criteria to evaluate both options and guide the team toward a shared decision.",
+    explanation: "When conflict shifts from professional debate to personal friction, the project manager must intervene to protect team dynamics. Facilitating an objective evaluation workshop helps depersonalize the issue, focusing the team back on technical realities and data-driven criteria."
+  },
+  {
+    question: "A project is underway to develop an autonomous delivery drone. Mid-project, the national aviation authority releases a revised regulatory framework regarding drone flight paths that severely restricts the project's current operating assumptions. What should the project manager do first?",
+    options: [
+      "Update the issue log and conduct an impact assessment to evaluate how the new regulations affect the project scope, timeline, and budget.",
+      "Draft a change request to immediately pivot the project's focus to an international market with fewer restrictions.",
+      "Terminate the project since the primary objective violates the newly released national regulatory guidelines.",
+      "Continue execution as planned because the project was initiated and approved before the new regulations were enacted."
+    ],
+    answer: "Update the issue log and conduct an impact assessment to evaluate how the new regulations affect the project scope, timeline, and budget.",
+    explanation: "Whenever a major external change occurs (such as a regulatory shift), the project manager's very first step is to document the item in the issue or risk log and perform an objective assessment of its impact on all project constraints before taking action."
+  },
+  {
+    question: "A project manager is managing a hybrid transformation project. The procurement team has finalized a contract with a third-party vendor for a predictive software module, but the internal development team is using Scrum. The vendor delivers late, stalling the internal team’s sprint dependencies. Which two actions are best for the project manager to take? (Select the best combined option)",
+    options: [
+      "Penalize the vendor financially immediately, and force the internal Scrum team to work overtime.",
+      "Immediately cancel the vendor contract, and have the internal team build the module from scratch.",
+      "Review the contract terms / SLA obligations for escalation paths, and work with the vendor and product owner to re-prioritize independent backlog items.",
+      "Force the vendor to join the daily Scrum meetings, and freeze all internal sprints until delivery is completed."
+    ],
+    answer: "Review the contract terms / SLA obligations for escalation paths, and work with the vendor and product owner to re-prioritize independent backlog items.",
+    explanation: "Reviewing contract terms is essential to understand the legal parameters and formal remedies established with the vendor. Concurrently, working with the product owner to adjust the product backlog ensures the internal team remains productive by shifting focus to non-dependent backlog items while the vendor issue is resolved."
+  },
+  {
+    question: "A complex project involves cross-functional team members from engineering, marketing, and legal departments. The legal team members consistently miss cross-functional workshops, stating that their departmental workload takes precedence over this project. What should the project manager do to resolve this?",
+    options: [
+      "Remove the legal team tasks from the project scope to avoid further team friction and meeting absences.",
+      "Escalate the legal team’s poor attendance to the project sponsor and request senior executive intervention.",
+      "Meet with the legal functional manager to review the project charter, align on resource commitments, and optimize meeting schedules.",
+      "Log a negative performance review for the specific legal team representatives who skipped the workshops."
+    ],
+    answer: "Meet with the legal functional manager to review the project charter, align on resource commitments, and optimize meeting schedules.",
+    explanation: "In a matrix organization, cross-functional team resources often report to functional managers who control their time and priorities. The project manager must negotiate directly with the functional manager to realign commitments, emphasize the project's strategic value, and find a compromise on scheduling."
+  },
+  {
+    question: "A project manager is analyzing project performance data using Earned Value Management (EVM). The analysis yields a Schedule Performance Index (SPI) of 0.82 and a Cost Performance Index (CPI) of 1.15. Which interpretation of the project status is accurate?",
+    options: [
+      "The project is ahead of schedule and over budget.",
+      "The project is behind schedule and under budget.",
+      "The project is ahead of schedule and under budget.",
+      "The project is behind schedule and over budget."
+    ],
+    answer: "The project is behind schedule and under budget.",
+    explanation: "An SPI value less than 1.0 (0.82 < 1.0) means the project is progressing at a slower rate than planned, meaning it is behind schedule. A CPI value greater than 1.0 (1.15 > 1.0) indicates that the project is earning more value than it is spending, meaning it is under budget."
+  },
+  {
+    question: "A global manufacturing project is designed to deliver a new eco-friendly packaging line. The company's corporate strategy changes mid-year, prioritizing immediate cost reduction over sustainability initiatives. What should the project manager do?",
+    options: [
+      "Continue executing the project as chartered, as project goals should remain independent of corporate strategy shifts.",
+      "Evaluate the project’s business case against the revised corporate strategy and present the findings to the steering committee.",
+      "Immediately stop all project expenditures and wait for the project sponsor to officially cancel the project.",
+      "Re-brand the project marketing materials to emphasize cost savings without modifying the actual technical deliverables."
+    ],
+    answer: "Evaluate the project’s business case against the revised corporate strategy and present the findings to the steering committee.",
+    explanation: "Projects exist to deliver value aligned with corporate strategy. When that strategy shifts fundamentally, the project manager must re-evaluate the business case to determine if the project remains viable or requires realignment, and then present those insights to governance bodies (the steering committee)."
+  },
+  {
+    question: "An agile team experiences a drop in performance due to team dysfunctions. Match each symptom to its correct action: (1) Hesitant to voice disagreement/false consensus, (2) Missing goals due to working in individual silos, (3) Blaming errors on external factors. Focus Actions: (A) Team charter alignment for shared accountability, (B) Psychological safety coaching and anonymous polling, (C) Cross-training and paired programming.",
+    options: [
+      "1-A, 2-B, 3-C",
+      "1-B, 2-C, 3-A",
+      "1-C, 2-A, 3-B",
+      "1-B, 2-A, 3-C"
+    ],
+    answer: "1-B, 2-C, 3-A",
+    explanation: "1 matches B: Hesitation to voice disagreement signals a lack of psychological safety; coaching on vulnerability helps. 2 matches C: Siloed work points to a lack of cross-functional skill sharing; pairing breaks down silos. 3 matches A: Blaming external factors indicates low accountability; a team charter reinforces that the team succeeds or fails together."
+  },
+
+  // --- THIRD SET: QUESTIONS 21-30 (Questions 1-20 from Document Part 3) ---
+  {
+    question: "A high-performing agile team member has missed several standup meetings over the last two weeks, and their sprint velocity has noticeably dropped. Other team members are starting to express frustration about picking up the slack. What should the project manager do first?",
+    options: [
+      "Address the issue during the upcoming sprint retrospective to get the team’s collective input.",
+      "Meet with the team member privately to understand the root cause of the sudden change in performance.",
+      "Inform the functional manager about the drop in performance and ask for a replacement resource.",
+      "Set up a team meeting to re-verify the working agreements and reinforce accountability."
+    ],
+    answer: "Meet with the team member privately to understand the root cause of the sudden change in performance.",
+    explanation: "A servant leader addresses performance issues with empathy and curiosity first. Meeting privately allows the project manager to discover if there are personal, professional, or technical issues blocking the team member before jumping to disciplinary or public actions."
+  },
+  {
+    question: "A company is transitioning from a predictive to a hybrid project management framework. During execution, a key stakeholder complains that they are no longer receiving the massive, comprehensive monthly status reports they are used to. How should the project manager handle this situation?",
+    options: [
+      "Continue sending the comprehensive monthly reports to this specific stakeholder to maintain engagement.",
+      "Explain that hybrid projects use automated, lightweight dashboards and refuse to create custom reports.",
+      "Review the communications management plan and meet with the stakeholder to align their information needs with hybrid reporting cadences.",
+      "Instruct the product owner to include report generation as a recurring item in the sprint backlog."
+    ],
+    answer: "Review the communications management plan and meet with the stakeholder to align their information needs with hybrid reporting cadences.",
+    explanation: "In a hybrid transition, stakeholders often experience anxiety over changing visibility tools. The project manager must review communication needs, respect the stakeholder's engagement value, and bridge the gap by matching what information they actually need with the available artifacts in the new hybrid ecosystem."
+  },
+  {
+    question: "During the execution of an industrial construction project, a critical piece of equipment fails. The project manager immediately triggers a pre-approved backup lease agreement to minimize downtime, which will cost an extra $15,000. This risk was previously identified and documented. Which action should the project manager take next?",
+    options: [
+      "Submit a formal change request to the Change Control Board (CCB) to allocate contingency reserves.",
+      "Update the risk register to reflect that the risk has occurred and log the response outcomes.",
+      "Revise the cost baseline to permanently include the extra lease expense.",
+      "Inform the sponsor immediately and ask for additional management reserves to cover the cost."
+    ],
+    answer: "Update the risk register to reflect that the risk has occurred and log the response outcomes.",
+    explanation: "Because the risk was previously identified and has a pre-approved response strategy, the project manager acts appropriately by implementing the response. The immediate next administrative step is to update the risk register to log the status, trigger event, and effectiveness of the strategy."
+  },
+  {
+    question: "A global logistics project is six months into its two-year timeline. A new international environmental regulation is passed that heavily taxes the carbon emissions of the fleet being deployed. Compliance is legally required within one year. What should the project manager do first?",
+    options: [
+      "Halt all project activities until a full legal assessment can be completed by corporate compliance.",
+      "Assess the specific impact of the new regulation on the project’s scope, budget, and timeline.",
+      "Submit a change request to modify the project charter to align with the new law.",
+      "Ignore the regulation for now, as the project will be nearly finished before enforcement begins."
+    ],
+    answer: "Assess the specific impact of the new regulation on the project’s scope, budget, and timeline.",
+    explanation: "When an external environmental factor changes, a project manager must never react blindly or ignore it. The first step must always be evaluating and assessing the explicit impact on the project metrics (scope, cost, time, quality)."
+  },
+  {
+    question: "An agile team is struggling to complete its committed backlog items during sprints. The team members state that a dominant technical lead frequently changes the design architecture mid-sprint without consulting the rest of the team. What action should the project manager (Scrum Master) take?",
+    options: [
+      "Instruct the team to strictly follow the technical lead's instructions since they hold the most expertise.",
+      "Facilitate a meeting with the team to establish or refine team working agreements regarding architectural decisions.",
+      "Remove the technical lead from the team to eliminate the friction and restore velocity.",
+      "Assign a business analyst to review and lock down all technical designs before the sprint begins."
+    ],
+    answer: "Facilitate a meeting with the team to establish or refine team working agreements regarding architectural decisions.",
+    explanation: "Agile environments rely on self-organizing teams. When conflict or structural issues arise regarding collaboration, the team should be empowered to define their own ground rules and decision-making frameworks via a Team Working Agreement."
+  },
+  {
+    question: "A hybrid project is executing its third iteration. The product owner keeps introducing new high-priority requirements into the current iteration, which is causing the development team to miss their sprint goals. What is the best way for the project manager to address this?",
+    options: [
+      "Tell the team to work overtime to ensure both the original goals and the new requirements are met.",
+      "Coach the product owner on agile principles, emphasizing that new items should be prioritized in the product backlog for the next iteration.",
+      "Escalate the product owner's behavior to the project sponsor as a violation of governance.",
+      "Transition the project entirely back to a predictive methodology to stop scope creep."
+    ],
+    answer: "Coach the product owner on agile principles, emphasizing that new items should be prioritized in the product backlog for the next iteration.",
+    explanation: "Sprints/iterations are timeboxed and should be shielded from mid-iteration scope changes to ensure predictable delivery. The product owner owns the backlog and needs to be coached to hold new requirements until the current iteration is finished, placing them in the next planning cycle."
+  },
+  {
+    question: "A project manager in a weak matrix organization is managing a cross-functional software deployment. Two resource functional managers suddenly withdraw their assigned engineers to work on an internal operational emergency, threatening a critical project milestone. Which two actions are best to resolve this conflict? (Select the best combined option)",
+    options: [
+      "Escalate the issue to the project sponsor to force resource return, and issue a formal complaint to HR.",
+      "Review the project charter to understand project manager authority level, and meet with functional managers to negotiate a temporary resource sharing plan or alternative solution.",
+      "Issue a complaint to HR, and evaluate the project schedule to crash or fast-track tasks with remaining resources without notifying managers.",
+      "Escalate directly to the sponsor, and accept the delay while updating the risk register."
+    ],
+    answer: "Review the project charter to understand project manager authority level, and meet with functional managers to negotiate a temporary resource sharing plan or alternative solution.",
+    explanation: "In a weak matrix environment, power rests primarily with functional managers. The project manager must first verify their structural boundary of authority via the Project Charter, and then use negotiation/interpersonal skills with the functional managers to find a mutually agreeable solution."
+  },
+  {
+    question: "During a mid-project sprint review, a key customer stakeholder expresses intense dissatisfaction with the user interface design of the delivered increment, stating it does not match their operational needs. How should the project manager handle this feedback?",
+    options: [
+      "Remind the stakeholder that the design was signed off during the initial planning phase and cannot be changed.",
+      "Document the feedback, collaborate with the product owner to write new user stories, and prioritize them in the product backlog.",
+      "Ask the development team to immediately stop the current sprint and fix the user interface.",
+      "Submit a formal change request to the Change Control Board (CCB) for approval to modify the design."
+    ],
+    answer: "Document the feedback, collaborate with the product owner to write new user stories, and prioritize them in the product backlog.",
+    explanation: "Agile values customer collaboration over contract negotiation and welcomes changing requirements, even late in development. Sprint reviews are designed specifically to harvest feedback. This feedback is captured, written into user stories, and placed into the backlog to be prioritized by value."
+  },
+  {
+    question: "A company’s strategic goal is to increase market share by launching a disruptive mobile application. The agile project team is working diligently, but the market dynamics change rapidly. What should the project manager ensure happens to guarantee the project continuously aligns with the business strategy?",
+    options: [
+      "The project charter is rewritten at the start of every sprint to match market fluctuations.",
+      "The product owner frequently reviews, refines, and reprioritizes the product backlog based on business value and market changes.",
+      "The team ignores external market factors and focuses strictly on finishing the original scope document.",
+      "A senior executive sits in on every daily standup to redirect the team's daily tasks."
+    ],
+    answer: "The product owner frequently reviews, refines, and reprioritizes the product backlog based on business value and market changes.",
+    explanation: "Continuous alignment with organizational strategy is maintained in agile through frequent backlog refinement (grooming), where the Product Owner constantly evaluates the value propositions of backlog items against shifting market conditions."
+  },
+  {
+    question: "A hybrid project involves an onshore predictive management team and an offshore agile development team. The onshore team complains that they cannot track progress without weekly percentage-complete updates. The offshore team claims these metrics are irrelevant to agile. How should the project manager bridge this gap?",
+    options: [
+      "Force the offshore agile team to calculate and provide weekly percentage-complete metrics.",
+      "Tell the onshore team to learn agile and stop asking for traditional status metrics.",
+      "Establish a unified tracking system, such as a Kanban board or burnup charts, translated into milestone progress markers that satisfy both groups.",
+      "Manage the two teams completely independently and merge their outputs at the very end of the project."
+    ],
+    answer: "Establish a unified tracking system, such as a Kanban board or burnup charts, translated into milestone progress markers that satisfy both groups.",
+    explanation: "A hybrid project manager acts as a translator between different delivery modalities. Instead of forcing one team to adopt metrics that don't fit their model, the PM creates information radiators (like a Kanban board mapped to high-level milestones) that satisfy both agile tracking and predictive reporting."
+  },
+  {
+    question: "A project manager is reviewing quality control measurements for a manufacturing project and notices that the last five batches of product have a diameter variation that is consistently near the upper control limit, though still within specification boundaries. What should the project manager do?",
+    options: [
+      "Do nothing, since the product measurements are still technically within the specification limits.",
+      "Immediately halt the production line and reject the last five batches as defective quality failures.",
+      "Analyze the process to determine if a systemic trend or assignable cause is emerging before the process goes out of control.",
+      "Change the control limits on the control chart to make the process look better to stakeholders."
+    ],
+    answer: "Analyze the process to determine if a systemic trend or assignable cause is emerging before the process goes out of control.",
+    explanation: "According to trend analysis concepts in statistical Quality Control (like the Rule of Seven rules of thumb), data points consistently leaning toward one side or creeping close to control limits indicate an underlying process issue (assignable cause) that requires investigation before defects actually occur."
+  },
+  {
+    question: "A newly formed agile team is experiencing significant internal conflict during sprint planning. Team members openly argue about task assignments, estimate values, and technical approaches. The overall atmosphere is tense. How should the project manager view and handle this situation?",
+    options: [
+      "This is the Storming stage of team development; the project manager should guide the team in establishing norms and collaborative problem-solving.",
+      "This is a sign of poor hiring; the project manager should request the immediate replacement of the argumentative team members.",
+      "This is a breakdown of discipline; the project manager must step in and authoritatively assign tasks to stop the arguing.",
+      "This is the Norming stage; the project manager should remain completely hands-off and let the team fight it out."
+    ],
+    answer: "This is the Storming stage of team development; the project manager should guide the team in establishing norms and collaborative problem-solving.",
+    explanation: "According to the Tuckman ladder of team development, teams naturally enter a \"Storming\" stage where conflict emerges as individuals test boundaries and ideas. A project manager should facilitate this phase safely, helping the team learn how to collaborate rather than shutting down discussions."
+  },
+  {
+    question: "A hybrid project is nearing its final release. The predictive deployment phase requires a comprehensive operational handoff and training program for the end-users. However, the operations manager states they cannot accept the handoff because their staff was never trained. What did the project manager fail to do properly?",
+    options: [
+      "Define the Definition of Done (DoD) for the software development sprints.",
+      "Identify and manage stakeholder engagement and training requirements within the project transition plan.",
+      "Perform a comprehensive quantitative risk analysis at the beginning of the project closure phase.",
+      "Secure a signed project charter from the operations manager during the initiation phase."
+    ],
+    answer: "Identify and manage stakeholder engagement and training requirements within the project transition plan.",
+    explanation: "Transition planning is a core component of project closure and stakeholder integration in all methodologies. The project manager is responsible for ensuring operational readiness, which directly includes training plans for the receiving operations team."
+  },
+  {
+    question: "An agile project manager needs to guide the team through the proper sequence of event-driven steps when a blocker is identified: (1) Blocker raised at daily standup, (2) Logged in impediment log / exploration begins, (3) Collaborate with external stakeholders to clear it, (4) Verify removal and update log. What is the correct sequential order?",
+    options: [
+      "1, 2, 3, 4",
+      "2, 1, 3, 4",
+      "1, 3, 2, 4",
+      "2, 3, 1, 4"
+    ],
+    answer: "1, 2, 3, 4",
+    explanation: "The logical chronological flow of blocker management is: 1) The issue is identified/raised during daily synchronization; 2) The servant leader logs the blocker to ensure visibility and tracks it; 3) The leader works to remove the blocker; 4) The leader validates that the team can resume work and closes the item."
+  },
+  {
+    question: "A multi-million dollar engineering project has a highly structured hierarchy. A junior engineer discovers a minor flaw in a design that could potentially cause a maintenance issue years down the road, but is hesitant to speak up due to fear of delaying the schedule or being blamed. What should the project manager do to address this?",
+    options: [
+      "Rely on the senior quality assurance engineers to catch the issue during the final inspection phase.",
+      "Foster a culture of psychological safety where team members are actively encouraged to voice concerns and risks without fear of retaliation.",
+      "Implement a strict reward system where only engineers who find critical defects receive monetary bonuses.",
+      "Remind the team that schedule compliance is the absolute highest priority on the project."
+    ],
+    answer: "Foster a culture of psychological safety where team members are actively encouraged to voice concerns and risks without fear of retaliation.",
+    explanation: "Psychological safety allows team members to surface errors, flaws, and risks early without fear of punishment or ridicule. Cultivating this culture prevents catastrophic downstream quality failures."
+  },
+  {
+    question: "An agile team has consistently failed to meet its sprint commitments for three consecutive iterations. The product owner is furious and accuses the team of being lazy. The team blames the product owner for writing ambiguous user stories. What is the most constructive step for the project manager to take?",
+    options: [
+      "Cancel the next sprint and hold an emergency performance review for all team members.",
+      "Act as a facilitator in the next sprint retrospective to help the team and product owner collaboratively establish a clear \"Definition of Ready\" (DoR).",
+      "Write the user stories themselves to ensure there is no more ambiguity between the parties.",
+      "Instruct the team to reduce their velocity estimates by 50% to ensure they can easily hit commitments."
+    ],
+    answer: "Act as a facilitator in the next sprint retrospective to help the team and product owner collaboratively establish a clear \"Definition of Ready\" (DoR).",
+    explanation: "When an agile team fails to meet sprint goals due to misaligned expectations with a Product Owner, the Retrospective is the proper arena to fix it. Establishing a clear \"Definition of Ready\" (DoR) ensures that no story enters a sprint unless it meets clear, unambiguous criteria agreed upon by both sides."
+  },
+  {
+    question: "A regulatory body introduces a surprise compliance mandate requiring all financial software to integrate a specific encryption protocol within 90 days. A hybrid project currently building a new banking app is impacted. What should the project manager do?",
+    options: [
+      "Advise the sponsor to ignore the mandate until the current project release is completed in 120 days.",
+      "Analyze the regulatory requirement, evaluate its impact on the project scope and timeline, and work with the product owner to integrate it into the upcoming cycle.",
+      "Immediately issue a stop-work order to the entire project team to prevent non-compliant code from being written.",
+      "Tell the development team to implement the encryption immediately without changing the current sprint backlog or timeline."
+    ],
+    answer: "Analyze the regulatory requirement, evaluate its impact on the project scope and timeline, and work with the product owner to integrate it into the upcoming cycle.",
+    explanation: "Compliance changes cannot be ignored or deferred if they are mandatory. The project manager must assess the impact and then coordinate directly with the product owner (who manages priority) to incorporate the legal requirements into the product backlog."
+  },
+  {
+    question: "A project manager is leading a global project with team members spread across four different time zones and cultures. Communication gaps are causing misunderstandings, missed deadlines, and dropped handoffs. What should the project manager do to improve team cohesion?",
+    options: [
+      "Mandate that all team members adjust their local working hours to match the project manager’s time zone.",
+      "Collaborate with the team to establish a Project Team Charter that defines communication norms, core working hours, and cultural considerations.",
+      "Replace the international team members with local resources to simplify communication.",
+      "Rely solely on email communication to ensure there is a permanent written record of all interactions."
+    ],
+    answer: "Collaborate with the team to establish a Project Team Charter that defines communication norms, core working hours, and cultural considerations.",
+    explanation: "A Project Team Charter (or Team Agreement) co-created by a distributed team sets operational norms. It clarifies expectations around response times, overlapping working windows, and cultural dynamics, allowing a global team to explicitly agree on how they will interact."
+  },
+  {
+    question: "A project manager is performing a variance analysis on a critical infrastructure project. The metrics show an Earned Value (EV) of $200,000, a Planned Value (PV) of $250,000, and an Actual Cost (AC) of $220,000. Which statement accurately summarizes the status of this project?",
+    options: [
+      "The project is ahead of schedule and under budget.",
+      "The project is behind schedule and under budget.",
+      "The project is ahead of schedule and over budget.",
+      "The project is behind schedule and over budget."
+    ],
+    answer: "The project is behind schedule and over budget.",
+    explanation: "Schedule Variance (SV) = EV - PV = $200,000 - $250,000 = -$50,000 (negative means behind schedule). Cost Variance (CV) = EV - AC = $200,000 - $220,000 = -$20,000 (negative means over budget)."
+  },
+  {
+    question: "During a challenging agile project execution, the project manager spends time removing administrative barriers, acquiring specialized training for the team, and ensuring the team has a comfortable, distraction-free environment. Which management style is the project manager demonstrating?",
+    options: [
+      "Laissez-faire Leadership",
+      "Transactional Leadership",
+      "Servant Leadership",
+      "Autocratic Leadership"
+    ],
+    answer: "Servant Leadership",
+    explanation: "Servant leadership focuses on understanding and addressing the needs and development of team members, removing organizational obstacles, and shielding the team from distractions to enable them to perform at their highest level."
+  }
         ];
 
         let currentQuestionIndex = 0;
